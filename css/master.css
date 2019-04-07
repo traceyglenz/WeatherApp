@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Chivo');
+
+[class*="col-"]{
+  float:left;
+  min-height: 1px;
+}
+
+@/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* For desktop: */
+  .col-1 {width: 14.28%;}
+  .col-2 {width: 28.57%;}
+  .col-3 {width: 42.85%;}
+  .col-4 {width: 57.13%;}
+  .col-5 {width: 71.41%;}
+  .col-6 {width: 85.69%;}
+  .col-7 {width: 100%;}
+}
+body {
+  background-image: linear-gradient(to right, #dff9fb, #F8EFBA);
+  font-family: 'Raleway', serif;
+}
+
+h1, h2 {
+  font-family: 'Chivo', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header input[type="text"]{
+  border-radius: .5em;
+  font-size: 2em;
+  text-align: center;
+}
+
+header input[type="text"]:focus{
+  outline: none;
+}
+
+main h2{
+  text-align: center;
+}
+
+article{
+  max-width: 95%;
+  margin: 0 2px;
+  background-color: #3498db;
+  text-align: center;
+}
