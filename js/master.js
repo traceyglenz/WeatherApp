@@ -1,5 +1,15 @@
 $(document).ready( function(){
 
+  //lcation entry event  &q=12866&days=7
+  // let url = "http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404";
+  // let days = "7";
+  $("#location").on("change", function(){
+    if location.val()!="";
+    console.log(zipcode);
+    // url.append(url + "&q=" + location.val + "&days=7");
+});
+
+//API steps
 let url = "http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=12866&days=7";
 
 $.ajax(
