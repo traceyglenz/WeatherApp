@@ -1,16 +1,16 @@
 $(document).ready( function(){
 
+  //API steps
+
+  $("#location-input").focus();
+
   //lcation entry event  &q=12866&days=7
   // let url = "http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404";
   // let days = "7";
-  $("#location").on("change", function(){
-    if location.val()!="";
-    console.log(zipcode);
-    // url.append(url + "&q=" + location.val + "&days=7");
-});
+  $("#location-input").on("input", function(){
+    if($(this).val().length == 5 ) {
 
-//API steps
-let url = "http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=12866&days=7";
+    let url = 'http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7';
 
 $.ajax(
   {
@@ -18,7 +18,9 @@ $.ajax(
     success: function(result){
       let forecast = result.forecast.forecastday;
 
-      console.log(forecast);
+      // console.log(forecast);
+
+      let #location-header = $("<h2/>" { text: "7-Day Forecast for" + forecast.location.name = ", " forecast.location.region});
 
 
 
@@ -37,53 +39,9 @@ $.ajax(
 
         $(".cards").append($article);
 
-
-
-
-  });
-
-}
-
+      });
+             }
+          });
+        };
+      });
 })
-
-
-
-
-// let weather = [
-// { date: "4/1/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "60º",
-// low: "45º"
-// },
-// { date: "4/2/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "55º",
-// low: "45º"
-// },
-// { date: "4/3/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "73º",
-// low: "45º"
-// },
-// { date: "4/4/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "80º",
-// low: "45º"
-// },
-// { date: "4/5/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "60º",
-// low: "45º"
-// },
-// { date: "4/6/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "24º",
-// low: "45º"
-// },
-// { date: "4/7/2019",
-// imgUrl: "https://cdn.apixu.com/weather/64x64/night/113.png",
-// high: "0º",
-// low: "45º"
-// })
-// ];
-});

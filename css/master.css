@@ -52,7 +52,7 @@ main h2{
 
 article{
   max-width: 95%;
-  margin: 0 2px;
+  /* margin: 0 2px; */
   background-color: #3498db;
   text-align: center;
 }
