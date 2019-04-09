@@ -19,13 +19,13 @@ $.ajax(
       let forecast = result.forecast.forecastday;
 
       // console.log(forecast);
-
-      let #location-header = $("<h2/>" { text: "7-Day Forecast for" + forecast.location.name = ", " forecast.location.region});
-
+      //Headline calling out the location of the input
+      // let $locationHeader = $("<h2/>" { text: "7-Day Forecast for" + forecast.location.name + ", " + forecast.location.region});
+      // $(".location").append($locationHeader);
 
 
       $.each (forecast, function(index, dayOfWeek) {
-        let $highLowH3 = $("<h3/>", { text: dayOfWeek.day.maxtemp_f + "/" + dayOfWeek.day.mintemp_f});
+        let $highLowH3 = $("<h3/>", { text: Math.round(dayOfWeek.day.maxtemp_f) + "/" + Math.round(dayOfWeek.day.mintemp_f)});
         // let $highLowH3 = $("<h3/>", { text: dayOfWeek.day.maxtemp_f + "/" + dayOfWeek.day.mintemp_f});
         let $weatherImg = $("<img/>", { src: "https:" + dayOfWeek.day.condition.icon});
         let $condition = $("<h4/>", { text: dayOfWeek.day.condition.text});

@@ -9,6 +9,7 @@
 @media only screen and (max-width: 600px) {
   [class*="col-"] {
     width: 100%;
+    padding: 15px;
   }
 }
 
@@ -51,7 +52,7 @@ main h2{
 }
 
 article{
-  max-width: 95%;
+  /* width: 80%; */
   /* margin: 0 2px; */
   background-color: #3498db;
   text-align: center;
