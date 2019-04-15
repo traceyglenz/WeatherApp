@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway|Chivo');
+@import url('https://fonts.googleapis.com/css?family=Chivo|Raleway');
 
 [class*="col-"]{
   float:left;
@@ -24,8 +24,8 @@
   .col-7 {width: 100%;}
 }
 body {
-  background-image: linear-gradient(to right, #dff9fb, #F8EFBA);
   font-family: 'Raleway', serif;
+  background-image: linear-gradient(to right, #dff9fb, #F8EFBA);
 
 }
 

@@ -10,7 +10,7 @@ $(document).ready( function(){
   $("#location-input").on("input", function(){
     if($(this).val().length == 5 ) {
 
-    let url = 'http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7';
+    let url = `http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7`;
 
 $.ajax(
   {
@@ -18,14 +18,14 @@ $.ajax(
     success: function(result){
       let forecast = result.forecast.forecastday;
 
-      // console.log(forecast);
+      console.log(forecast);
       //Headline calling out the location of the input
-      // let $locationHeader = $("<h2/>" { text: "7-Day Forecast for" + forecast.location.name + ", " + forecast.location.region});
-      // $(".location").append($locationHeader);
+      let location = [];
+      $(".location-heading").text(`7-Day Forecast for ${result.location.name}, ${result.location.region}`);
 
 
       $.each (forecast, function(index, dayOfWeek) {
-        let $highLowH3 = $("<h3/>", { text: Math.round(dayOfWeek.day.maxtemp_f) + "/" + Math.round(dayOfWeek.day.mintemp_f)});
+        let $highLowH3 = $("<h3/>", { text: Math.round(dayOfWeek.day.maxtemp_f) + "\xB0/" + Math.round(dayOfWeek.day.mintemp_f) + "\xB0"});
         // let $highLowH3 = $("<h3/>", { text: dayOfWeek.day.maxtemp_f + "/" + dayOfWeek.day.mintemp_f});
         let $weatherImg = $("<img/>", { src: "https:" + dayOfWeek.day.condition.icon});
         let $condition = $("<h4/>", { text: dayOfWeek.day.condition.text});
