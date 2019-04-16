@@ -12,6 +12,7 @@ $(document).ready( function(){
 
     let url = `http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7`;
 
+
 $.ajax(
   {
     url: url,
@@ -22,7 +23,7 @@ $.ajax(
       //Headline calling out the location of the input
       let location = [];
       $(".location-heading").text(`7-Day Forecast for ${result.location.name}, ${result.location.region}`);
-
+      $(".location-heading").text="";
 
       $.each (forecast, function(index, dayOfWeek) {
         let $highLowH3 = $("<h3/>", { text: Math.round(dayOfWeek.day.maxtemp_f) + "\xB0/" + Math.round(dayOfWeek.day.mintemp_f) + "\xB0"});
@@ -39,9 +40,11 @@ $.ajax(
 
         $(".cards").append($article);
 
+
       });
              }
           });
         };
       });
 })
+  
