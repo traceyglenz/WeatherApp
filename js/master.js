@@ -10,7 +10,7 @@ $(document).ready( function(){
   $("#location-input").on("input", function(){
     if($(this).val().length == 5 ) {
 
-    let url = `http://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7`;
+    let url = `https://api.apixu.com/v1/forecast.json?key=1a3ea6499f0b4045878222804190404&q=${$(this).val()}&days=7`;
 
     $(".cards").text("");
 
